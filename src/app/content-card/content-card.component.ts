@@ -1,45 +1,22 @@
-import { Component } from '@angular/core';
-import { ContentList } from '../helper-files/content-list';
+import { NgFor, NgIf } from '@angular/common';
+import { Component, OnInit, Input } from '@angular/core';
+import { Content } from '../helper-files/content-interface';
+
 @Component({
   selector: 'app-content-card',
   standalone: true,
-  imports: [],
+  imports: [NgFor, NgIf],
   templateUrl: './content-card.component.html',
-  styleUrl: './content-card.component.scss'
+  styleUrl: './content-card.component.scss',
 })
-export class ContentCardComponent {
-  contentList:ContentList;
-  constructor(){
-    this.contentList = new ContentList();
+export class ContentCardComponent implements OnInit {
+  @Input() content: Content | any;
 
-    this.contentList.addContent({
-      id: 1,
-      title: ' Quantum Shadow ',
-      description: 'A physicist turned superhero who manipulates shadows.',
-      creator: 'Alex Mercer',
-      imgURL: 'assets/images/img1.jpg',
-      type: ' Comic Book Character',
-      tags: [' Physics', 'Stealth', ' Intelligence'],
-    }),
+  constructor() {}
 
-    this.contentList.addContent({
-      id: 2,
-      title: 'Celestial Guardian',
-      description: 'Born from a cosmic event, this hero wields the power of starlight to protect Earth from interstellar threats.',
-      creator: 'Jordan Lee',
-      imgURL: 'assets/images/img2.jpg',
-      type: 'Graphic Novel Hero',
-      tags: ['Cosmic Powers', 'Brilliance', ' Heroism'],
-    }),
+  ngOnInit(): void {}
 
-    this.contentList.addContent({
-      id: 3,
-      title: 'Neon Blitz',
-      description: 'An urban vigilante with the ability to control.',
-      creator: 'Casey Rivera',
-      imgURL: 'assets/images/img3.jpg ',
-      type: ' Animated Series Character',
-      tags: ['Electricity', 'Vigilante', ' Dazzling'],
-    },);
+  handleClick(contentLog: Content): void {
+    console.log(`ID: ${contentLog.id}, TITLE: ${contentLog.title}`);
   }
 }

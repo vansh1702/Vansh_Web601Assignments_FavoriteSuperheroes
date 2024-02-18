@@ -1,0 +1,27 @@
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 25px;
+    background: rgb(175, 188, 188);
+    color: #000;
+  }
+
+  .card > div {
+    display: flex;
+    gap: 10px;
+  }
+
+  .card img {
+    cursor: pointer;
+  }
+
+  .badge {
+    display: inline-block;
+    margin: 0 5px 5px 0;
+    padding: 10px 10px;
+    background-color: rgb(202, 224, 224);
+    border-radius: 9998px;
+  }
