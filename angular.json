@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/vansh-my-favourite-superheroes",
+            "outputPath": "dist/vansh-my-favouritesuperheroes",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -97,8 +97,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }
